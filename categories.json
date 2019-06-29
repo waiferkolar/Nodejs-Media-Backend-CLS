@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1",
+        "name": "cars",
+        "image": "car.jpg",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": "2",
+        "name": "bikes",
+        "image": "bike.jpg",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": "3",
+        "name": "computers",
+        "image": "computer.jpg",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": "4",
+        "name": "drinks",
+        "image": "drinks.jpg",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": "5",
+        "name": "foods",
+        "image": "food.jpg",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": "6",
+        "name": "furniture",
+        "image": "furniture.png",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": "7",
+        "name": "phones",
+        "image": "phone.jpg",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": "8",
+        "name": "hotels",
+        "image": "hotel.jpg",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": "9",
+        "name": "shirts",
+        "image": "shirt.jpg",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": "10",
+        "name": "templates",
+        "image": "template.jpg",
+        "created_at": null,
+        "updated_at": null
+    }
+]
