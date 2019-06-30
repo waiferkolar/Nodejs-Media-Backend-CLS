@@ -11,7 +11,7 @@ let adminRoute = require("./routes/admin")(express, passport)
 let JWTStrategy = require("passport-jwt").Strategy
 let ExtractJWT = require("passport-jwt").ExtractJwt
 let dbUser = require("./database/dbuser")
-let fs = require('fs')
+let seeder = require("./database/seeder")
 
 let jwtOptions = {};
 
@@ -41,14 +41,6 @@ app.use(bodyParaser.urlencoded({ extended: true }))
 app.use("/guest", guestRoute)
 app.use("/user", userRoute)
 app.use("/admin", adminRoute)
-
-// Post
-// Image Upload 
-// Pagination
-// Parent => Child 
-// Component => Component
-// Lokijs database => client 
-
 
 app.listen("3000");
 

@@ -26,6 +26,7 @@ let paginate = (start, count) => {
         page: start,
         limit: count
     };
+    console.log("start : " + start + " count " + count);
     return new Promise((resolve, reject) => {
         Product.paginate({}, options, (err, result) => {
             if (err) reject(err)

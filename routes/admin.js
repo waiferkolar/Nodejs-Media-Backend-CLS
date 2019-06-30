@@ -20,9 +20,10 @@ module.exports = (express, passport) => {
             .then(result => res.send(result))
             .catch(err => res.send(err))
     });
-    router.get("/product/paginate", passport.authenticate("jwt", { session: false }), (req, res) => {
+    router.get("/product/paginate/:start/:count", passport.authenticate("jwt", { session: false }), (req, res) => {
         let start = req.param("start")
-        dbProduct.paginate(start, 10)
+        let count = req.param("count")
+        dbProduct.paginate(Number(start), Number(count))
             .then(result => res.send(result))
             .catch(err => res.send(err))
     });

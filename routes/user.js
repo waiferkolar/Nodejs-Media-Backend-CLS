@@ -12,7 +12,9 @@ module.exports = (express, jwt) => {
                 user.save({
                     "name": name, "email": email, "password": pass,
                     "since": new Date()
-                }).then(result => res.send(result))
+                })
+                    .then(result => res.send({ "con": true, "data": result }))
+                    .catch((err) => res.send({ "con": false, "data": err }))
             })
     });
     router.post('/login', (req, res) => {
@@ -30,6 +32,7 @@ module.exports = (express, jwt) => {
                             res.send({ "con": result })
                         }
                     })
+                    .catch((re) => res.send({ "con": re }))
             })
 
     });
