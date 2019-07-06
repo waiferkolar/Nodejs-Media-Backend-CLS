@@ -36,6 +36,7 @@ my_strategy = new JWTStrategy(jwtOptions, (payload, next) => {
 app.use(passport.initialize())
 passport.use(my_strategy)
 
+
 app.use(bodyParaser.json())
 app.use(bodyParaser.urlencoded({ extended: true }))
 app.use("/guest", guestRoute)

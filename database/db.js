@@ -14,6 +14,11 @@ let CatScheme = new Schema({
     since: { type: Date, required: true }
 });
 
+let GalleryScheme = new Schema({
+    id: { type: Number, required: true },
+    name: { type: String, required: true },
+});
+
 let ProudtScheme = new Schema({
     cat_id: { type: Number, required: true },
     name: { type: String, required: true },
@@ -36,9 +41,13 @@ ProudtScheme.plugin(autoincrement.plugin, "product");
 ProudtScheme.plugin(mongoosePaginate)
 let Product = mongoose.model("product", ProudtScheme);
 let User = mongoose.model("user", UserScheme);
+GalleryScheme.plugin(autoincrement.plugin, "gallery");
+let Gallery = mongoose.model('gallery', GalleryScheme);
+
 
 module.exports = {
     Cat,
     Product,
-    User
+    User,
+    Gallery
 }
