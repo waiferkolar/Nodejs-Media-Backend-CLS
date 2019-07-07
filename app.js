@@ -6,6 +6,7 @@ let jwt = require("jsonwebtoken")
 let guestRoute = require("./routes/guest")(express)
 let userRoute = require("./routes/user")(express, jwt)
 let adminRoute = require("./routes/admin")(express, passport)
+let path = require('path')
 
 
 let JWTStrategy = require("passport-jwt").Strategy
@@ -31,7 +32,9 @@ my_strategy = new JWTStrategy(jwtOptions, (payload, next) => {
                 next("Creditial Error", null)
             }
         })
-})
+});
+
+app.use(express.static(path.join("./assets")))
 
 app.use(passport.initialize())
 passport.use(my_strategy)

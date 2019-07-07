@@ -32,16 +32,16 @@ module.exports = (express, passport) => {
     });
     router.post("/product/create", passport.authenticate("jwt", { session: false }), (req, res) => {
         let obj = {
-            "cat_id": req.body.cat_id,
+            "cat_id": req.body.category,
             "name": req.body.name,
             "price": req.body.price,
             "image": req.body.image,
-            "description": req.body.description,
+            "description": req.body.desc,
             "since": new Date()
         }
         dbProduct.save(obj)
-            .then(result => res.send(result))
-            .catch(err => res.send(err))
+            .then(result => res.json({ con: true, data: result }))
+            .catch(err => res.send({ con: false }))
     });
     router.get("/product/paginate/:start/:count", passport.authenticate("jwt", { session: false }), (req, res) => {
         let start = req.param("start")
@@ -53,6 +53,12 @@ module.exports = (express, passport) => {
     router.get('/cat/all', passport.authenticate('jwt', { session: false }), (req, res) => {
         cat.all()
             .then((ret) => res.json({ con: true, cats: ret }))
+            .catch((err) => res.json({ con: false }));
+    });
+
+    router.get('/gallery/all', passport.authenticate('jwt', { session: false }), (req, res) => {
+        gal.all()
+            .then((ret) => res.json({ con: true, gallery: ret }))
             .catch((err) => res.json({ con: false }));
     });
     return router;

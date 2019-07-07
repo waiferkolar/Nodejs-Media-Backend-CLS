@@ -21,9 +21,19 @@ let save = (ary) => {
         } else {
             reject(bol)
         }
+    });
+
+
+}
+let all = () => {
+    return new Promise((resolve, reject) => {
+        Gallery.find({}, (err, data) => {
+            if (err) reject(err)
+            resolve(data)
+        });
     })
 }
-
 module.exports = {
-    save
+    save,
+    all
 }
